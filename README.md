@@ -6,7 +6,7 @@
 
 
 ## Demo
-> [Demonstration on Heroku](http://ng-lazy-image.herokuapp.com/)
+> [Demonstration on Heroku](http://angular-lazy-image.herokuapp.com/)
 
 
 ## Installation
