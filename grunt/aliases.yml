@@ -1,0 +1,27 @@
+default:
+  - 'clean'
+  - 'jshint'
+  #- 'karma:unit'
+  - 'uglify'
+  - 'copy'
+
+test:
+  - 'karma:unit'
+
+testDev:
+  - 'connect:test'
+  - 'protractor:dev'
+
+testSauce:
+  - 'connect:test'
+  - 'protractor:sauce'
+
+production:
+  - 'clean'
+  - 'jshint'
+  - 'test:unit'
+  #- 'testSauce'
+  - 'uglify'
+
+install:
+  - 'shell'
