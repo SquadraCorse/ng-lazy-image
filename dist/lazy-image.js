@@ -1,5 +1,5 @@
 /* global angular */
-angular.module('lazyImage', [])
+angular.module('squadracorse.lazyImage', [])
     .service('srcSetService', ['$window', function($window) {
         'use strict';
         /**
