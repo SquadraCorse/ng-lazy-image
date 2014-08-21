@@ -2,11 +2,11 @@
 angular.module('afkl.ng.lazyImage', [])
     .service('srcSetService', ['$window', function($window) {
         'use strict';
+
         /**
          * For other applications wanting the srccset/best image approach it is possible to use this module only
          * Loosely based on https://raw.github.com/borismus/srcset-polyfill/master/js/srcset-info.js
          */
-
         var INT_REGEXP = /^[0-9]+$/;
 
         // SRCSET IMG OBJECT
@@ -16,8 +16,6 @@ angular.module('afkl.ng.lazyImage', [])
             this.h = options.h || Infinity;
             this.x = options.x || 1;
         }
-
-
 
         /**
          * Parse srcset rules
