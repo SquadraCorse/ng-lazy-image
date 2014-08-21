@@ -1,10 +1,8 @@
 before_install:
  - npm install -g grunt-cli
- - npm install -g bower
 
 install:
  - npm install -d
- - bower install -d
  - webdriver-manager update
 
 script:
