@@ -300,6 +300,7 @@ angular.module('lazyImage', [])
             image: getBestImage    // RETURNS BEST IMAGE WITH GIVEN CANDIDATES
         };
 
+
     }])
     .directive('tifLazyImage', ['$window', 'srcSetService', function ($window, srcSetService) {
         'use strict';
@@ -320,18 +321,22 @@ angular.module('lazyImage', [])
                 var img; // Angular element to image which will be placed
                 var images = attrs.tifLazyImage; // srcset attributes
                 var currentImage = null; // current image url
+                var offset = 50;
 
                 // ON SCROLL, CHECK IF ELEMENT IS IN VIEWPORT
                 var _onScroll = function () {
                     // LOCAL CONFIG VARS
-                    var elementBottom, remaining, shouldLoad, windowBottom;
+                    var elementTop, remaining, shouldLoad, windowBottom;
+
+                    // var offsetElement = element[0].offsetParent ? element[0].offsetParent.offsetTop : 0;
+                    var offsetElement = element[0].getBoundingClientRect().top;
 
                     windowBottom = $window[0].innerHeight + $window[0].scrollY;
-                    elementBottom = element[0].getBoundingClientRect().top + element[0].offsetHeight;
-                    remaining = elementBottom - windowBottom;
+                    elementTop = offsetElement;
+                    remaining = elementTop - windowBottom;
 
                     // DO WE ACTUALLY NEED TO SET THE IMAGE TAG AND FORCE LOADING IMAGE
-                    shouldLoad = remaining <= $window[0].innerHeight;
+                    shouldLoad = remaining <= offset;
 
                     // DO IT ONCE
                     if (shouldLoad && !loaded) {
