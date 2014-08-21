@@ -6,7 +6,7 @@
 
 
 ## Demo
-> [Demonstration on Heroku](http://angular-lazy-image.herokuapp.com/)
+> [Demonstration](http://squadracorse.github.io/ng-lazy-image/)
 
 
 ## Installation 
