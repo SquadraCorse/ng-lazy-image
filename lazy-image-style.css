@@ -1,0 +1,25 @@
+/* preventing reflow lazy image setup */
+.js .g-img-lazy{
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	display: block;
+}
+
+.g-img-lazy .ng-lazy-image {
+	width: 100%;
+}
+
+/* available ratio's, make your own if they are different on different devices */
+.g-img-ratio-4-2 {
+	padding-bottom: 50%;
+}
+.g-img-ratio-16-9 {
+	padding-bottom: 56.25%;
+}
+.g-img-ratio-3-2 {
+	padding-bottom: 66.67%;
+}
+.g-img-ratio-1-1 {
+	padding-bottom: 100%;
+}
