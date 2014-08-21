@@ -46,13 +46,8 @@ angular.module('afklm.ng.lazyImage', [])
                         out[lastChar] = intVal;
                     } else if (!isNaN(floatVal) && lastChar === 'x') {
                         out[lastChar] = floatVal;
-                    } else {
-                        /* start-test-block */
-                        if (window.console) {
-                            window.console.error('Invalid srcset descriptor found in "' + desc + '".');
-                        }
-                        /* end-test-block */
-                    }
+                    } 
+
                 }
             }
 

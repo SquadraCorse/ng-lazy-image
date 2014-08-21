@@ -1,24 +1,29 @@
 /* globals: beforeEach, describe, it, module, inject, expect */
 describe("Lazy image", function() {
 
-    var $document, el, scope;
+    var $document, $window, el, scope;
 
     beforeEach(module('afklm.ng.lazyImage'));
 
-    beforeEach(inject(function($compile, _$document_, $rootScope) {
+    beforeEach(inject(function($compile, _$document_, _$window_, $rootScope) {
 
         scope = $rootScope.$new();
         $document = _$document_;
+        $window = _$window_;
+
+        spyOn($window, 'onresize');
 
         el1 = angular.element('<div afklm-lazy-image="foo.png 480w"></div>');
         el2 = angular.element('<div afklm-lazy-image="foo.png 480h"></div>');
         el3 = angular.element('<div afklm-lazy-image="foo.png 1x"></div>');
         el4 = angular.element('<div afklm-lazy-image=""></div>');
+        el5 = angular.element('<div afklm-lazy-image="foo.png 480w, foo.png 480w"></div>');
 
         $compile(el1)(scope);
         $compile(el2)(scope);
         $compile(el3)(scope);
         $compile(el4)(scope);
+        $compile(el5)(scope);
 
         scope.$digest();
 
@@ -33,6 +38,16 @@ describe("Lazy image", function() {
     it('no image should be attached', function () {
         expect(el4.html()).toBe('');
     });
+
+    it('we only have one image', function () {
+        expect(el5.html()).toBe('<img alt="" class="afklm-lazy-image" src="foo.png">');
+    });
+
+    it('we only have one image', function () {
+        $window.resizeTo(200, 200);
+        // expect($window.onresize()).toHaveBeenCalled();
+    });
+
 
     it('should remove images when destroyed', function () {
         scope.$destroy();

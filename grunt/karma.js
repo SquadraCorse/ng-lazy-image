@@ -10,5 +10,9 @@ module.exports = {
     unit: {
         singleRun: true,
         browsers: ['PhantomJS']
+    },
+    browser: {
+        singleRun: false,
+        browsers: ['Chrome']
     }
 };
