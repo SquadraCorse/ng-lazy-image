@@ -343,6 +343,8 @@ angular.module('squadracorse.lazyImage', [])
 
                         loaded = true;
                         // SET NEW IMAGE
+                        // TODO: GET SRCSET ATTRIBUTES AND COLLECT RIGHT IMAGE TO PLACE
+                        // TODO: FOR DEMO WE NOW ONLY HAVE ONE, SO MAKE HELPER FUNCTION FOR SRCSET!!
                         currentImage = bestImage(images);
                         img = angular.element('<img alt="" class="ng-lazy-image" src="' + currentImage + '" />');
                         element.append(img);
