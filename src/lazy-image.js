@@ -306,7 +306,12 @@ angular.module('squadracorse.lazyImage', [])
         'use strict';
 
         var bestImage = function (images) {
-            return srcSetService.get({srcset: images}).best.src;
+            var image = srcSetService.get({srcset: images});
+            var sourceUrl;
+            if (image) {
+                sourceUrl = image.best.src;
+            }
+            return sourceUrl;
         };
 
         return {
@@ -344,8 +349,10 @@ angular.module('squadracorse.lazyImage', [])
                         loaded = true;
                         // SET NEW IMAGE
                         currentImage = bestImage(images);
-                        img = angular.element('<img alt="" class="ng-lazy-image" src="' + currentImage + '" />');
-                        element.append(img);
+                        if (currentImage) {
+                            img = angular.element('<img alt="" class="ng-lazy-image" src="' + currentImage + '" />');
+                            element.append(img);
+                        }
 
                         // ELEMENT WILL NOT HAVE TO LISTEN TO SCROLL ANYMORE
                         $window.off('scroll', _onScroll);
