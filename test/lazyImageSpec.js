@@ -59,38 +59,44 @@ describe("Lazy image", function() {
 
 describe("srcset Service", function() {
 
-    var $document, $window, el, scope;
+    var SrcSetService;
 
     beforeEach(module('afkl.ng.lazyImage'));
 
-    it('Is my srcset Service available', inject(function(srcSetService) {
-        expect(srcSetService).toBeDefined();
+    beforeEach(inject(function(srcSetService) {
+        SrcSetService = srcSetService;
     }));
 
-    it('Simple image candidates without descriptors understood', inject(function(srcSetService) {
-        var s1 = srcSetService.get({src: 'default.png', srcset: 'mobile.png'});
-        expect(s1.best.src).toBeDefined();
-    }));
 
-    it('Single image declarations set to the right defaults', inject(function(srcSetService) {
-        var s1 = srcSetService.get({srcset: 'mobile.png'});
-        var best = s1.best;
+
+    it('Is my srcset Service available', function () {
+        expect(SrcSetService).toBeDefined();
+    });
+
+    it('Simple image candidates without descriptors understood', function () {
+        var s = SrcSetService.get({src: 'default.png', srcset: 'mobile.png'});
+        expect(s.best.src).toBeDefined();
+    });
+
+    it('Single image declarations set to the right defaults', function () {
+        var s = SrcSetService.get({srcset: 'mobile.png'});
+        var best = s.best;
         expect(best.src).toBe('mobile.png');
         expect(best.x).toBe(1);
         expect(best.w).toBe(Infinity);
         expect(best.h).toBe(Infinity);
-    }));
+    });
 
-    it('Complex compound image candidates understood', inject(function(srcSetService) {
-        var s1 = srcSetService.get({srcset: 'mobile.png 720w, tablet.png 1280w, desktop.png 1x'});
-        expect(s1.best.src).toBeDefined();
-    }));
+    it('Complex compound image candidates understood', function () {
+        var s = SrcSetService.get({srcset: 'mobile.png 720w, tablet.png 1280w, desktop.png 1x'});
+        expect(s.best.src).toBeDefined();
+    });
 
 
-    it('Repeated values for image candidates are ignored', inject(function(srcSetService) {
-        var s1 = srcSetService.get({srcset: 'mobile.png 720w, mobile.png 720w'});
-        expect(s1.candidates.length).toBe(1);
-    }));
+    it('Repeated values for image candidates are ignored', function () {
+        var s = SrcSetService.get({srcset: 'mobile.png 720w, mobile.png 720w'});
+        expect(s.candidates.length).toBe(1);
+    });
 
 
 
