@@ -1,7 +1,7 @@
 {
   "name": "angular-lazy-image",
   "main": "dist/lazy-image.min.js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "https://github.com/SquadraCorse/ng-lazy-image",
   "authors": [
     "Maarten van Oudenniel <info@maas38.nl>"
