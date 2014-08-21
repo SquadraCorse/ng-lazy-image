@@ -9,7 +9,7 @@
 > [Demonstration on Heroku](http://angular-lazy-image.herokuapp.com/)
 
 
-## Installation
+## Installation 
 1. `bower install angular-lazy-image`
 2. Add a dependency on `lazyImage` in your app module.
 3. See the `style.css` for some classes you can use (will add more aspect ratio's later)
