@@ -5,12 +5,5 @@ module.exports = {
                 'src/lazy-image.js'
             ]
         }
-    },
-    lib: {
-        files: {
-            "src/lib.min.js" : [ 
-                "bower_components/angular/angular.js"
-            ]
-        }
     }
 };

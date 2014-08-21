@@ -4,9 +4,10 @@ module.exports = function (config) {
         basePath : '../',
 
         files : [
-            'bower_components/angular/angular.js',
-            'bower_components/angular-mocks/angular-mocks.js',
-            // 'src/lib.js',
+            //'bower_components/angular/angular.js',
+            //'bower_components/angular-mocks/angular-mocks.js',
+            'src/lib/angular.min.js',
+            'src/lib/angular-mocks.js',
             'src/lazy-image.js',
             'test/**/*.js'
         ],
@@ -14,6 +15,7 @@ module.exports = function (config) {
         exclude: [
             // 'src/app/js/lib/*.js'
         ],
+
         autoWatch : true, // DEVELOPMENT
         // singleRun: true,
 

@@ -1,9 +1,9 @@
 default:
   - 'clean'
   - 'jshint'
-  #- 'karma:unit'
-  - 'uglify'
-  - 'copy'
+  - 'karma:unit'
+  - 'uglify:app'
+  - 'copy:build'
 
 test:
   - 'karma:unit'
@@ -19,9 +19,13 @@ testSauce:
 production:
   - 'clean'
   - 'jshint'
-  - 'test:unit'
-  #- 'testSauce'
-  - 'uglify'
+  - 'karma:unit'
+  - 'uglify:app'
+  - 'copy:build'
 
 install:
   - 'shell'
+
+update:
+ - 'install'
+ - 'copy:update'
