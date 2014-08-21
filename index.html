@@ -21,11 +21,28 @@
 			float: left;
 			width: 50%;
 		}
-		.demo-sample:after {
+		.demo-sample:after,
+		.demo-aspect:after {
 			content: "";
 			display: table;
 			clear: both;
 		}
+		.demo-aspect {
+			list-style: none;
+			margin: 0 0 20px;
+			padding: 0;
+		}
+		.demo-aspect-ratio {
+			width: 180px;
+			float: left;
+			margin-right: 20px;
+		}
+		.demo-aspect-last { margin-right: 0; }
+		.demo-aspect .afklm-lazy-wrapper {
+			display: block;
+			background-color: #eee;
+		}
+
 		@media (max-width:768px){
 			.demo-wrapper {
 				width: 100%;
@@ -58,6 +75,17 @@
     	<p><span afklm-lazy-image="//placehold.it/240x120 480w, //placehold.it/440x220 768w" class="afklm-lazy-wrapper afklm-img-ratio-4-2 demo-image"></span></p>
     	<p><span afklm-lazy-image="//placehold.it/400x200" class="afklm-lazy-wrapper afklm-img-ratio-4-2 demo-image"></span></p>
     </div>
+
+
+    <h3>Aspect ratio's</h3>
+    <p>Browser reflow is bad, especially when lazy loading images. The container aspect ratio setup sets the correct image container when DOM is presented which doesn't make your site jumping. If you want different aspect ratio's for different srcset setup then introduce your own classnames.</p>
+
+	<ul class="demo-aspect">
+		<li class="demo-aspect-ratio"><div class="afklm-lazy-wrapper afklm-img-ratio-4-2">4-2</div></li>
+		<li class="demo-aspect-ratio"><div class="afklm-lazy-wrapper afklm-img-ratio-16-9">16-9</div></li>
+		<li class="demo-aspect-ratio"><div class="afklm-lazy-wrapper afklm-img-ratio-3-2">3-2</div></li>
+		<li class="demo-aspect-ratio demo-aspect-last"><div class="afklm-lazy-wrapper afklm-img-ratio-1-1">1-1</div></li>
+	</ul>
 
 </div>
 
