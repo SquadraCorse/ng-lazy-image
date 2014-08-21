@@ -7,25 +7,27 @@
     <link rel="stylesheet" type="text/css" href="lazy-image-style.css" />
     <style>
     	/* Project specific css, only for demo */
-    	body { padding: 0; margin: 0; font: 16px "Lucida Sans Unicode","Lucida Grande",verdana,arial,sans-serif; }
-		.klm-image {
+    	body { 
+    		padding: 0; margin: 0; font: 16px "Lucida Sans Unicode","Lucida Grande",verdana,arial,sans-serif;
+    	}
+		.demo-image {
 			margin-bottom: 20px; 
 		}
-		.klm-demo-wrapper {
+		.demo-wrapper {
 			width: 780px;
 			margin: 0 auto;
 		}
-		.klm-sample p { 
+		.demo-sample p { 
 			float: left;
 			width: 50%;
 		}
-		.klm-sample:after {
+		.demo-sample:after {
 			content: "";
 			display: table;
 			clear: both;
 		}
 		@media (max-width:768px){
-			.klm-demo-wrapper {
+			.demo-wrapper {
 				width: 100%;
 			}
 		}
@@ -34,7 +36,7 @@
 </head>
 <body ng-controller="mainCtrl">
 
-<div class="klm-demo-wrapper">
+<div class="demo-wrapper">
 
 	<h1>Angular lazy image directive</h1>
 
@@ -44,17 +46,17 @@
 	<h2>Example</h2>
 	<p>Resize, reload and scroll to see what gets actually loaded and when.</p>
 
-    <div tif-lazy-image="//placehold.it/480x320 480w, //placehold.it/768x512 768w, //placehold.it/768x512 480w 2x, //placehold.it/936x624 2x" class="g-img-lazy g-img-ratio-3-2 klm-image"></div>
+    <div afklm-lazy-image="//placehold.it/480x320 480w, //placehold.it/768x512 768w, //placehold.it/768x512 480w 2x, //placehold.it/936x624 2x" class="afklm-lazy-wrapper afklm-img-ratio-3-2 demo-image"></div>
 
     <p>Example showing other aspect ratio. The parent container always sets the max width available for the image to align.</p>
 
-    <div tif-lazy-image="//placehold.it/480x480 480w, //placehold.it/768x768 768w, //placehold.it/936x936" class="g-img-lazy g-img-ratio-1-1 klm-image"></div>
+    <div afklm-lazy-image="//placehold.it/480x480 480w, //placehold.it/768x768 768w, //placehold.it/936x936" class="afklm-lazy-wrapper afklm-img-ratio-1-1 demo-image"></div>
 
     <p>Very flexible in rulings.</p>
 
-    <div class="klm-sample">
-    	<p><span tif-lazy-image="//placehold.it/240x120 480w, //placehold.it/440x220 768w" class="g-img-lazy g-img-ratio-4-2 klm-image"></span></p>
-    	<p><span tif-lazy-image="//placehold.it/400x200" class="g-img-lazy g-img-ratio-4-2 klm-image"></span></p>
+    <div class="demo-sample">
+    	<p><span afklm-lazy-image="//placehold.it/240x120 480w, //placehold.it/440x220 768w" class="afklm-lazy-wrapper afklm-img-ratio-4-2 demo-image"></span></p>
+    	<p><span afklm-lazy-image="//placehold.it/400x200" class="afklm-lazy-wrapper afklm-img-ratio-4-2 demo-image"></span></p>
     </div>
 
 </div>

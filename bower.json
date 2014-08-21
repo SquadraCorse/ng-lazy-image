@@ -1,9 +1,10 @@
 {
   "name": "angular-lazy-image",
   "main": "dist/lazy-image.min.js",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "https://github.com/SquadraCorse/ng-lazy-image",
   "authors": [
+    "KLM Royal Dutch Airlines",
     "Maarten van Oudenniel <info@maas38.nl>"
   ],
   "description": "Loading responsive image when container (which is preventing reflow) is in view.",

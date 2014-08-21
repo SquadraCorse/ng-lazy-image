@@ -3,17 +3,17 @@ describe("Lazy image", function() {
 
     var $document, el, scope;
 
-    beforeEach(module('squadracorse.lazyImage'));
+    beforeEach(module('afklm.ng.lazyImage'));
 
     beforeEach(inject(function($compile, _$document_, $rootScope) {
 
         scope = $rootScope.$new();
         $document = _$document_;
 
-        el1 = angular.element('<div tif-lazy-image="foo.png 480w"></div>');
-        el2 = angular.element('<div tif-lazy-image="foo.png 480h"></div>');
-        el3 = angular.element('<div tif-lazy-image="foo.png 1x"></div>');
-        el4 = angular.element('<div tif-lazy-image=""></div>');
+        el1 = angular.element('<div afklm-lazy-image="foo.png 480w"></div>');
+        el2 = angular.element('<div afklm-lazy-image="foo.png 480h"></div>');
+        el3 = angular.element('<div afklm-lazy-image="foo.png 1x"></div>');
+        el4 = angular.element('<div afklm-lazy-image=""></div>');
 
         $compile(el1)(scope);
         $compile(el2)(scope);
