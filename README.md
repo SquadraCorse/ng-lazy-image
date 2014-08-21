@@ -10,22 +10,22 @@
 
 ## Installation 
 1. `bower install angular-lazy-image`
-2. Add a dependency on `afklm.ng.lazyImage` in your app module.
+2. Add a dependency on `afkl.ng.lazyImage` in your app module.
 3. See the `style.css` for some classes you can use (will add more aspect ratio's later)
 
 
 ### Usage
 
 ``` html
-    <div afklm-lazy-image="//placehold.it/480x480 480w, //placehold.it/768x768 768w, //placehold.it/936x936" class="afklm-lazy-wrapper afklm-img-ratio-1-1 demo-image"></div>
+    <div afkl-lazy-image="//placehold.it/480x480 480w, //placehold.it/768x768 768w, //placehold.it/936x936" class="afkl-lazy-wrapper afkl-img-ratio-1-1 demo-image"></div>
 ```
 
 The attributes are using the srcset setup. Your window will determine which image fits best (so the rules are very dynamic). The image will only be set when the parent container is in the viewport (lazy loading).
 
 
 ### Options
-- "afklm-lazy-image": srcset string (required)
-- "class" : `afklm-lazy-wrapper` will use height 0 trick, `afklm-img-ratio-1-1` sets correct aspect ratio (optional, include css)
+- "afkl-lazy-image": srcset string (required)
+- "class" : `afkl-lazy-wrapper` will use height 0 trick, `afkl-img-ratio-1-1` sets correct aspect ratio (optional, include css)
 
 ## Todo
 - Option to set background-image as well.

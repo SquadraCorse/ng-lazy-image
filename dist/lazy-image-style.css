@@ -1,25 +1,25 @@
 /* preventing reflow lazy image setup */
-.js .afklm-lazy-wrapper {
+.js .afkl-lazy-wrapper {
 	position: relative;
 	height: 0;
 	overflow: hidden;
 	display: block;
 }
 
-.afklm-lazy-wrapper .afklm-lazy-image {
+.afkl-lazy-wrapper .afkl-lazy-image {
 	width: 100%;
 }
 
 /* available ratio's, make your own if they are different on different devices */
-.afklm-img-ratio-4-2 {
+.afkl-img-ratio-4-2 {
 	padding-bottom: 50%;
 }
-.afklm-img-ratio-16-9 {
+.afkl-img-ratio-16-9 {
 	padding-bottom: 56.25%;
 }
-.afklm-img-ratio-3-2 {
+.afkl-img-ratio-3-2 {
 	padding-bottom: 66.67%;
 }
-.afklm-img-ratio-1-1 {
+.afkl-img-ratio-1-1 {
 	padding-bottom: 100%;
 }

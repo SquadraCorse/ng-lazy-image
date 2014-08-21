@@ -1,12 +1,12 @@
 /* global angular */
-angular.module('afklm.ng.lazyImage', [])
+angular.module('afkl.ng.lazyImage', [])
     .service('srcSetService', ['$window', function($window) {
         'use strict';
+
         /**
          * For other applications wanting the srccset/best image approach it is possible to use this module only
          * Loosely based on https://raw.github.com/borismus/srcset-polyfill/master/js/srcset-info.js
          */
-
         var INT_REGEXP = /^[0-9]+$/;
 
         // SRCSET IMG OBJECT
@@ -16,8 +16,6 @@ angular.module('afklm.ng.lazyImage', [])
             this.h = options.h || Infinity;
             this.x = options.x || 1;
         }
-
-
 
         /**
          * Parse srcset rules
@@ -297,7 +295,7 @@ angular.module('afklm.ng.lazyImage', [])
 
 
     }])
-    .directive('afklmLazyImage', ['$window', 'srcSetService', function ($window, srcSetService) {
+    .directive('afklLazyImage', ['$window', 'srcSetService', function ($window, srcSetService) {
         'use strict';
 
         var bestImage = function (images) {
@@ -319,7 +317,7 @@ angular.module('afklm.ng.lazyImage', [])
                 var loaded = false;
 
                 var img; // Angular element to image which will be placed
-                var images = attrs.afklmLazyImage; // srcset attributes
+                var images = attrs.afklLazyImage; // srcset attributes
                 var currentImage = null; // current image url
                 var offset = 50;
 
@@ -346,7 +344,7 @@ angular.module('afklm.ng.lazyImage', [])
                         currentImage = bestImage(images);
 
                         if (currentImage) {
-                            img = angular.element('<img alt="" class="afklm-lazy-image" src="' + currentImage + '" />');
+                            img = angular.element('<img alt="" class="afkl-lazy-image" src="' + currentImage + '" />');
                             element.append(img);
                         }
 
