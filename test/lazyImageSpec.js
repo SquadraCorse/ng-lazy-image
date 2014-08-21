@@ -3,7 +3,7 @@ describe("Lazy image", function() {
 
     var el, scope;
 
-    beforeEach(module('lazyImage'));
+    beforeEach(module('squadracorse.lazyImage'));
 
     beforeEach(inject(function($compile, $rootScope) {
 
