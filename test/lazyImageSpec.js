@@ -25,9 +25,9 @@ describe("Lazy image", function() {
     }));
 
     it('does it have image attached', function () {
-        expect(el1.html()).toBe('<img alt="" class="ng-lazy-image" src="foo.png">');
-        expect(el2.html()).toBe('<img alt="" class="ng-lazy-image" src="foo.png">');
-        expect(el3.html()).toBe('<img alt="" class="ng-lazy-image" src="foo.png">');
+        expect(el1.html()).toBe('<img alt="" class="afklm-lazy-image" src="foo.png">');
+        expect(el2.html()).toBe('<img alt="" class="afklm-lazy-image" src="foo.png">');
+        expect(el3.html()).toBe('<img alt="" class="afklm-lazy-image" src="foo.png">');
     });
 
     it('no image should be attached', function () {
