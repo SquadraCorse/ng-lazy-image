@@ -35,5 +35,8 @@ The attributes are using the srcset setup. Your window will determine which imag
 ## Build using
 [![Codeship Status for SquadraCorse/ng-lazy-image](https://www.codeship.io/projects/0fad19b0-0ad2-0132-b0c1-12fe8603e519/status)](https://www.codeship.io/projects/31862)
 
+## Help
+- Using bower on corporate network which blocks git protocol run `bash git config --global url."https://".insteadOf git://`
+
 ## License
 As AngularJS itself, this module is released under the permissive [MIT license](LICENSE.md). Your contributions are always welcome.
