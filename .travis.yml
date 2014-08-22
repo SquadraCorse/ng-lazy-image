@@ -1,14 +1,13 @@
 before_install:
- - npm install -g grunt-cli
-
+- npm install -g grunt-cli
 install:
- - npm install -d
- - webdriver-manager update
-
+- npm install -d
+- webdriver-manager update
 script:
-  - grunt production
-
+- grunt production
+- grunt coveralls
 env:
   global:
   - secure: OAm/M2exphl1FGXcCtjI+C41quNZXrfLLVHJMKG8ydSHgswxfKrIu9cEQcgMZH/hfHlnxIBiXjXDQXFsgTCUlYbiUqEgZSYOpNN6yGZMUThxZyN1eOo7UexOYmWB2tZ/a6XZTJFH/6lHpphigcs8Izc9QAWHmeivdJrK+DiRxqs=
   - secure: RLLKjq6I+k+5vDmJqk/PC1Krm9Zo1VgAZlpeoLON5wgsTdMm5Z3dO3B8LtNsYG/+YhkctT5yG6hf18ehKypDz/5CAiq3ejPDWQrK+84I68zz81vj+TULy+WVM8WDf3oreK/ri0JXxm7jKbArsPzf3WubCEjLGkiBg3injdNWNdo=
+  - secure: M8m44lrZL96VsldOQ0at0X23S/RGIn6gnKa+TA9MqcsjKk9oKNRhLgMrvhJ7GQ5TZSgAbU7coVKAZ6Ogi06z6dWKTeyy2KJ2zvB4g1rPcbclIDn2/a9osoh8wY4/0QvP5SE3WiQS1ZpppDetYdhFXHxiWB6r7N1M8IYWGmP+ED8=
