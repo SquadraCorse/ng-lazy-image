@@ -1,17 +1,14 @@
 /* globals: beforeEach, describe, it, module, inject, expect */
 describe("Lazy image", function() {
 
-    var $document, $window, el, scope;
+    var $document, scope;
 
     beforeEach(module('afkl.ng.lazyImage'));
 
-    beforeEach(inject(function($compile, _$document_, _$window_, $rootScope) {
+    beforeEach(inject(function($compile, $rootScope, _$document_) {
 
         scope = $rootScope.$new();
         $document = _$document_;
-        $window = _$window_;
-
-        spyOn($window, 'onresize');
 
         el1 = angular.element('<div afkl-lazy-image="foo.png 480w"></div>');
         el2 = angular.element('<div afkl-lazy-image="foo.png 480h"></div>');
@@ -29,27 +26,21 @@ describe("Lazy image", function() {
 
     }));
 
-    it('does it have image attached', function () {
+    it('Does it have image attached', function () {
         expect(el1.html()).toBe('<img alt="" class="afkl-lazy-image" src="foo.png">');
         expect(el2.html()).toBe('<img alt="" class="afkl-lazy-image" src="foo.png">');
         expect(el3.html()).toBe('<img alt="" class="afkl-lazy-image" src="foo.png">');
     });
 
-    it('no image should be attached', function () {
+    it('No image should be attached', function () {
         expect(el4.html()).toBe('');
     });
 
-    it('we only have one image', function () {
+    it('We only have one image', function () {
         expect(el5.html()).toBe('<img alt="" class="afkl-lazy-image" src="foo.png">');
     });
 
-    it('we only have one image', function () {
-        $window.resizeTo(200, 200);
-        // expect($window.onresize()).toHaveBeenCalled();
-    });
-
-
-    it('should remove images when destroyed', function () {
+    it('Should remove images when destroyed', function () {
         scope.$destroy();
         expect($document.find('img').length).toBe(0);
     });
@@ -66,7 +57,6 @@ describe("srcset Service", function() {
     beforeEach(inject(function(srcSetService) {
         SrcSetService = srcSetService;
     }));
-
 
 
     it('Is my srcset Service available', function () {
@@ -102,7 +92,40 @@ describe("srcset Service", function() {
 
 });
 
-// TODO TEST CORRECT SIZE IMAGE
-// 
+// TODO: CORRECT IMAGE FROM MOCKED WINDOW VARS
+/*
+describe("Correct image", function() {
 
+    var scope, el;
 
+    beforeEach(module('afkl.ng.lazyImage'));
+
+    beforeEach(function () {
+        angular.mock.module('afkl.ng.lazyImage', function ($provide) {
+            var myMock = {
+                innerHeight: 400,
+                innerWidth: 500
+            };
+            $provide.value('$window', myMock);
+        });
+    });
+
+    beforeEach(inject(function($compile, $rootScope) {
+
+        scope = $rootScope.$new();
+
+        el = angular.element('<div afkl-lazy-image="foo.png 480w"></div>');
+
+        $compile(el)(scope);
+
+        scope.$digest();
+
+    }));
+
+    it('does it have image attached', function () {
+        expect(el.html()).toBe('<img alt="" class="afkl-lazy-image" src="foo.png">');
+    });
+
+});
+*/
+// TODO: TRIGGER RESIZE EVENT
